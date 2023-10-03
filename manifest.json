@@ -1,0 +1,48 @@
+{
+
+    "manifest_version": 2,
+    "name": "DLA",
+    "version": "1.0",
+  
+    "description": "Extensions to avoid procrastinating what you need to do by looking at useless sites.",
+  
+    "icons": {
+      "48": "icons/border-48.png"
+    },
+  
+  
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["background.js"]
+      }
+    ],
+  
+    "web_accessible_resources": [
+      {
+        "resources": ["background.js"],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    
+    "browser_action": {
+      "default_icon": "icons/border-48.png",
+      "default_title": "DLA!",
+      "default_popup": "popup/minimenu.html"
+    },
+  
+    "options_ui": {
+      "page": "option/setting.html",
+      "open_in_tab": true
+    },
+  
+    "content_security_policy": "script-src 'self'; object-src 'self';",
+  
+    "permissions": [
+      "storage",
+      "activeTab",
+      "contextMenus"
+    ]
+  
+  }
+  
