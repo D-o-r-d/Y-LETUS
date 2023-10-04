@@ -5,8 +5,9 @@
 // Get courses
 var elems = [];
 var mycourse_TUS = document.getElementsByClassName('type_unknown depth_3 contains_branch')[0];
+// ↓時間で変化するようにしたい
 var targetlist = [2,3];  // 0: 通年  1: 前期  2: 後期  3: 統合コース
-
+var items = ["通年","前期","後期","統合コース"];
 for($i=0;$i<targetlist.length;$i++){
     var mcli = mycourse_TUS.getElementsByClassName('type_unknown depth_4 contains_branch')[targetlist[$i]];
     var mcls = mcli.getElementsByClassName('type_course depth_6 contains_branch');
