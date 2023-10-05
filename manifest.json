@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Y-LETUS",
-  "version": "1.0",
+  "version": "1.1",
 
   "description": "LETUSに登録したコースのメニューをトップページに表示します。\nDisplay sub-menu on the top-page of LETUS and make it yummy.",
   
