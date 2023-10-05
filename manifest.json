@@ -3,8 +3,11 @@
   "name": "Y-LETUS",
   "version": "1.0",
 
-  "description": "Display submenu on the toppage of LETUS.",
-
+  "description": "LETUSに登録したコースのメニューをトップページに表示します。\nDisplay sub-menu on the top-page of LETUS and make it yummy.",
+  
+  "icons": {
+    "48": "icon.png"
+  },
 
   "content_scripts": [
     {
