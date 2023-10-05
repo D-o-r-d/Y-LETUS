@@ -8,25 +8,25 @@ var mycourse_TUS = document.getElementsByClassName('type_unknown depth_3 contain
 // ↓時間で変化するようにしたい
 // 0: 通年  1: 前期  2: 後期  3: 統合コース
 var now = new Date();
-if(now.getMonth() < 9-1){
-    var targetlist = [0,1];
-} else {
-    var targetlist = [0,2];
+var month = now.getMonth()+1;
+var targetlist = [0];
+if(4 <= month && month <= 9){    // 前期：4月〜9月
+    targetlist.push(1);
+}
+if(month < 4 || 9 <= month){  // 後期：9月〜2月
+    targetlist.push(2);
 }
 
 var items = ["通年","前期","後期","統合コース"];
 for(var i=0;i<targetlist.length;i++){
     var mcli = mycourse_TUS.getElementsByClassName('type_unknown depth_4 contains_branch')[targetlist[i]];
     var mcls = mcli.getElementsByClassName('type_course depth_6 contains_branch');
-    console.log(i,mcls.length);
     for(var j=0;j<mcls.length;j++){
         var mca = mcls[j].querySelectorAll('a')[0];
-        console.log(i,j,elems.length-1,mca.innerHTML);
         elems[elems.length-1].push([mca.innerHTML,mca.getAttribute('href')]);
     }
     elems.push([]);
 }
-console.log(elems);
 
 // Display
 var text = "<div id='addon-topmenu'>";
